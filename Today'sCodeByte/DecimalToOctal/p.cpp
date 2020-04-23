@@ -1,30 +1,18 @@
 #include <iostream>
-#include <algorithm>
 using namespace std;
-
 #define ll long long
-
 int main()
 {
-
-    ll num = 0;
-    cin >> num;
-
-    ll *octal = new ll[100000000];
-    ll count = 0;
-    while (num != 0)
+    int n;
+    cin >> n;
+    int sum = 0;
+    int p = 1;
+    while (n != 0)
     {
-        octal[count] = num % 8;
-        num = num / 8;
-        count++;
+        sum += (n % 8) * p;
+        p *= 10;
+        n /= 8;
     }
-
-    reverse(octal, octal + count);
-
-    for (ll j = 0; j < count; j++)
-    {
-        cout << octal[j];
-    }
-
+    cout << sum << endl;
     return 0;
 }
