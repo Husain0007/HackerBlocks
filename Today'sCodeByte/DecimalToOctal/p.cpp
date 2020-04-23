@@ -3,10 +3,10 @@ using namespace std;
 #define ll long long
 int main()
 {
-    int n;
+    ll n;
     cin >> n;
-    int sum = 0;
-    int p = 1;
+    ll sum = 0;
+    ll p = 1;
     while (n != 0)
     {
         sum += (n % 8) * p;
