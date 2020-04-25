@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
-// a-97,
+// a-97, z-122
 int main()
 {
     string word;
@@ -22,10 +22,15 @@ int main()
 
             for (ll i = 0; i < word.size(); i++)
             {
-                int num;
-                num = (int)(word[i] - 97);
-                num = (num + shift) % 26;
-                word[i] = (char)(num + 97);
+                word[i] += shift;
+                if (word[i] > 'z')
+                {
+                    word[i] = word[i] - 'z' + 'a' - 1;
+                }
+                // int num;
+                // num = (int)(word[i] - 97);
+                // num = (num + shift) % 26;
+                // word[i] = (char)(num + 97);
             }
         }
         else
